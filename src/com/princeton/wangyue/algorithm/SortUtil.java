@@ -1,6 +1,5 @@
 package com.princeton.wangyue.algorithm;
 
-import com.sun.tools.javac.util.ArrayUtils;
 import java.util.Arrays;
 
 /**
@@ -15,6 +14,7 @@ public class SortUtil {
    * 定义：冒泡排序只会操作相邻的两个数据。每次冒泡操作都会对相邻的两个元素进行比较，
    * 看是否满足大小关系要求。如果不满足就让它俩互换。一次冒泡会让至少一个元素移动到它应该在的位置，
    * 重复 n 次，就完成了 n 个数据的排序工作。
+   * 从左到右找最大值，反之则找最小值。
    *
    * 自己理解：循环对比相邻的两个值，如果不同，进行交换，大的放右边。
    *
@@ -23,8 +23,13 @@ public class SortUtil {
    * */
   public static void bunbleSort(int[] arr){
     int length = arr.length;
-    for (int i = 0; i < length; i++) {
-      for (int j = 0; j < length - i - 1; j++) {
+    if(length <=1){
+      return;
+    }
+    for (int i = 0; i < length-1; i++) {//最多做length-1次排序。因为第length-1次可以判断最后两个的值的大小。
+
+      System.out.println(Arrays.toString(arr));
+      for (int j = 0; j < length - i - 1; j++) {//因为下面会用到arr[j+1]，这里需要-1，否则会角标越界。
         if(arr[j] > arr[j+1]){
           int temp = arr[j];
           arr[j] = arr[j+1];
@@ -33,7 +38,6 @@ public class SortUtil {
       }
     }
 
-    System.out.println(Arrays.toString(arr));
   }
 
   /**
@@ -48,12 +52,14 @@ public class SortUtil {
    * 内层循环控制未排序
    * */
   public static void insetSort(int[] arr){
-
     int length = arr.length;
+    if(length <=1){
+      return;
+    }
     for (int i = 0; i < length; i++) {
       int value = arr[i];
       int insertIndex = i-1;
-      for (; insertIndex > 0; insertIndex--) {
+      for (; insertIndex >= 0; insertIndex--) {
         if(value < arr[insertIndex]){
           arr[insertIndex+1] = arr[insertIndex];//移动数据
         }else{
@@ -81,6 +87,9 @@ public class SortUtil {
    * */
   public static void selectSort(int[] arr){
     int length = arr.length;
+    if(length <=1){
+      return;
+    }
     for (int i = 0; i < length; i++) {
       int min = arr[i];
       int minIndex = i;

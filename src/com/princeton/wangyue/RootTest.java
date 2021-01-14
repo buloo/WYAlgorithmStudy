@@ -12,7 +12,7 @@ public class RootTest {
 
     System.out.println("Hello World");
 
-    int[] arr = new int[]{23,4,5,6,4,7,9,3,5,2,14};
+    int[] arr = new int[]{23,2,5,6,4,7,9,3,5,2,14};
 //    SortUtil.selectSort(arr);
 //    SortUtil.bunbleSort(arr);
     SortUtil.insetSort(arr);
