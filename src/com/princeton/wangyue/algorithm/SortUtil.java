@@ -23,12 +23,7 @@ public class SortUtil {
    * */
   public static void bunbleSort(int[] arr){
     int length = arr.length;
-    if(length <=1){
-      return;
-    }
     for (int i = 0; i < length-1; i++) {//最多做length-1次排序。因为第length-1次可以判断最后两个的值的大小。
-
-      System.out.println(Arrays.toString(arr));
       for (int j = 0; j < length - i - 1; j++) {//因为下面会用到arr[j+1]，这里需要-1，否则会角标越界。
         if(arr[j] > arr[j+1]){
           int temp = arr[j];
@@ -53,9 +48,6 @@ public class SortUtil {
    * */
   public static void insetSort(int[] arr){
     int length = arr.length;
-    if(length <=1){
-      return;
-    }
     for (int i = 0; i < length; i++) {
       int value = arr[i];
       int insertIndex = i-1;
@@ -68,8 +60,6 @@ public class SortUtil {
       }
       arr[insertIndex+1] = value;//插入数据
     }
-    System.out.println(Arrays.toString(arr));
-
   }
 
   /**
@@ -103,7 +93,5 @@ public class SortUtil {
       arr[minIndex] = arr[i];
       arr[i] = min;
     }
-    System.out.println(Arrays.toString(arr));
   }
-
 }
