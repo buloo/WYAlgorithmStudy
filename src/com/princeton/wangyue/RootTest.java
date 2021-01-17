@@ -1,6 +1,9 @@
 package com.princeton.wangyue;
 
+import com.princeton.wangyue.algorithm.MergeSort;
+import com.princeton.wangyue.algorithm.Recursive;
 import com.princeton.wangyue.algorithm.SortUtil;
+import java.util.Arrays;
 
 /**
  * @Author wangyue8
@@ -10,12 +13,15 @@ public class RootTest {
 
   public static void main(String[] args){
 
-    System.out.println("Hello World");
-
-    int[] arr = new int[]{23,2,5,6,4,7,9,3,5,2,14};
+    int[] arr = new int[]{5,2,3,1};
 //    SortUtil.selectSort(arr);
 //    SortUtil.bunbleSort(arr);
-    SortUtil.insetSort(arr);
+//    SortUtil.insetSort(arr);
+//    MergeSort.mergeSort(arr);
+    System.out.println(Arrays.toString(MergeSort.mergeSort(arr)));
+
+//    Recursive.recursive(10);
+//    System.out.println("result ============ "+ result);
   }
 
 
